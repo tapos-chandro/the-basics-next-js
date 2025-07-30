@@ -27,6 +27,9 @@ export default function RootLayout({ children }) {
         <main className="container mx-auto p-4">
           {children}
         </main>
+        <footer className="text-center p-4">
+          <p>© 2023 My Next.js App</p>
+        </footer>
       </body>
     </html>
   );
