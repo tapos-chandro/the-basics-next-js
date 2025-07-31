@@ -1,5 +1,9 @@
 
-export default function Home() {
+
+export default async function Home() {
+
+
+
   return (
     <div>
       <h1>Welcome to My Next.js App</h1>
