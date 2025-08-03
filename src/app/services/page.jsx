@@ -1,9 +1,20 @@
 import Image from 'next/image';
 import React from 'react';
 
+
+export const metadata = {
+  title: 'Services',
+  description: 'services pages',
+}
+
+
 export default async function Services() {
   const res = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=b');
   const meals = await res.json();
+
+
+
+
 
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 p-4">
@@ -14,7 +25,7 @@ export default async function Services() {
               src={meal?.strMealThumb}
               alt={meal?.strMeal || 'Meal Image'}
               fill
-     	sizes="(max-width: 768px) 100vw, 33vw"
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
             {/* <img src={meal?.strMealThumb} alt="" /> */}
