@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 
@@ -12,6 +13,8 @@ export default async function Services() {
   const res = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=b');
   const meals = await res.json();
 
+
+  console.log(meals)
 
 
 
@@ -33,6 +36,7 @@ export default async function Services() {
           <div className="p-2">
             <h1 className="text-lg font-semibold">{meal?.strCategory}</h1>
             <p className="text-sm text-gray-600">{meal?.strMeal}</p>
+           <Link href={`/details/${meal.idMeal}`}> <button className='hover:cursor-pointer bg-blue-600 p-2 rounded-md my-3'>Show Details</button></Link>
           </div>
         </div>
       ))}
